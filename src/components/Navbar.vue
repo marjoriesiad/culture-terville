@@ -6,7 +6,7 @@
         </div>
         
         <div class="flex space-x-4 font-bold">
-            <a href="/">Menu</a>
+            <a href="/menu">Menu</a>
             <a href="/">Contacts</a>
         </div>
     </div>
