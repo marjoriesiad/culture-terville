@@ -8,7 +8,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomePageVue
+      component: MenuPageVue
     },
     {
       path: '/menu',
