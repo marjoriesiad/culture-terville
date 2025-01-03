@@ -15,6 +15,11 @@ export default {
       },
     },
   },
+
+  daisyui: {
+    themes: ["sunset", "corporate"]
+  },
+
   plugins: [
     daisyui,
   ],
