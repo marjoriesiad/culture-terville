@@ -8,7 +8,9 @@ import { FaUser } from "react-icons/fa";
 const Navbar = () => {
   const [isLogginedIn, setIsLogginedIn] = useState(true);
   const [isAdmin, setIsAdmin] = useState(true);
+  const [cartList, setCartList] = useState(2);
   return (
+    <>
     <div className="navbar bg-base-100">
       <div className="flex-1">
         <a href="/" className="btn btn-ghost text-xl">Culture Terville</a>
@@ -16,11 +18,25 @@ const Navbar = () => {
       <div className="flex-none">
         <div className="dropdown dropdown-end">
           <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
-            <LuShoppingCart className="text-xl" />
+            {cartList > 0 ? (
+              <div className="indicator">
+              <span className="indicator-item badge badge-error scale-50 rounded-full"></span>
+              <LuShoppingCart className="text-xl" />
+            </div>
+            ) : (
+              <LuShoppingCart className="text-xl" />
+            )}
+            
+            
           </div>
           <div tabIndex={0} className="card card-compact dropdown-content bg-base-100 z-[1] mt-3 w-52 shadow">
             <div className="card-body">
-              <p className="text-sm">Votre panier est vide</p>
+              {cartList === 0 ? (
+                <p className="text-sm">Votre panier est vide</p>
+              ) : (
+                <p>Liste des items</p>
+              )}
+              
               <div className="card-actions">
                 <button className="btn btn-primary btn-block">Voir le panier</button>
               </div>
@@ -63,6 +79,10 @@ const Navbar = () => {
         </div>
       </div>
     </div>
+   <div className="px-4">
+    <SearchBar />
+   </div>
+    </>
     
   )
 }

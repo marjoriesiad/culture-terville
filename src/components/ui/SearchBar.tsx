@@ -4,8 +4,8 @@ interface SearchBarProps {
 
 const SearchBar = ({ size = 'input-sm' }: SearchBarProps) => {
   return (
-    <label className={`input input-bordered flex items-center gap-2 ${size}`}>
-      <input type="text" className="grow" placeholder="Search" />
+    <label className={`input input-bordered flex items-center gap-2 rounded-lg ${size}`}>
+      <input type="text" className="grow" placeholder="Chercher un produit" />
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 16 16"
